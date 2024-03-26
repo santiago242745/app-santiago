@@ -1,1 +1,27 @@
-<p>transactions works!</p>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Tipo</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Destino</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Status</th>
+            <th scope="col">Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactionsList">
+            <th scope="row">{{ transaction.type }}</th>
+            <td>{{ transaction.source }}</td>
+            <td>{{ transaction.destination }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.category }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.status }}</td>
+            <td>{{ transaction.balance }}</td>
+        </tr>
+    </tbody>
+</table>
