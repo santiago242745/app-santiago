@@ -21,30 +21,27 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
-
-  loginForm!: FormGroup;
+  signupForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      this.authService.signin(this.loginForm.getRawValue()).subscribe((token) => {
-        localStorage.setItem('access-token', token);
-        this.router.navigate(['/']);
-      })
-    } else {
-      console.log('Form is invalid!');
-    }
+    this.authService.signup(this.signupForm.getRawValue()).subscribe((token) => {
+      localStorage.setItem('access-token', token);
+      this.router.navigate(['/']);
+    })
   }
 }

@@ -8,7 +8,7 @@ import { SignUpComponent } from './modules/sign-up/sign-up.component';
 import { TransactionsComponent } from './modules/transactions/transactions.component';
 import { LoginComponent } from './modules/login/login.component';
 
-const routeConfig: Routes = [
+export const routeConfig: Routes = [
   {
     path: '',
     component: DashboardComponent,
