@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Transaction } from '../../models/transaction';
-import { TransactionService } from '../../service/transaction..service';
+import { TransactionService } from '../../service/transaction.service';
 
 @Component({
   selector: 'app-dashboard',
