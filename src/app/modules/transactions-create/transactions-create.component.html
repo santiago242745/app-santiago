@@ -3,11 +3,11 @@
     <br>
     <H1>CREACION TRANSACCIÓN</H1>
     <br>
-    <form>
+    <form [formGroup]="transactionCreateForm" (submit)="onSubmit()">
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="formControlSelect1">Tipo</label>
-                <select class="form-control" id="formControlSelect1">
+                <select class="form-control" id="formControlSelect1" formControlName="type">
                     <option>Deposit</option>
                     <option>Withdrawal</option>
                 </select>
@@ -15,29 +15,43 @@
             <div class="form-group col-md-4">
                 <label for="inputOrigen">Origen</label>
                 <input type="text" class="form-control" id="inputOrigen" placeholder="Ingresa la cuenta origen"
-                    required>
+                formControlName="source" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputDestino">Destino</label>
                 <input type="text" class="form-control" id="inputDestino" placeholder="Ingresa la cuenta destino"
-                    required>
+                formControlName="destination" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group  col-md-4">
                 <label for="inputValor">Valor</label>
-                <input type="text" class="form-control" id="inputValor" placeholder="Ingresa el valor" required>
+                <input type="number" class="form-control" id="inputValor" placeholder="Ingresa el valor"
+                formControlName="amount" required>
             </div>
             <div class="form-group  col-md-4">
                 <label for="inputCategoria">Categoria</label>
-                <input type="text" class="form-control" id="inputCategoria" placeholder="Ingresa la categoria" required>
+                <input type="text" class="form-control" id="inputCategoria" placeholder="Ingresa la categoria"
+                formControlName="category" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputDescripcion">Descripción</label>
                 <input type="text" class="form-control" id="inputDescripcion" placeholder="Ingresa la descripción"
-                    required>
+                formControlName="description" required>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Crear</button>
+        <!--<div class="form-row">
+            <div class="form-group  col-md-4">
+                <label for="inputBalance">Balance</label>
+                <input type="number" class="form-control" id="inputBalance" placeholder="Ingresa el balance"
+                formControlName="balance" required>
+            </div>
+            <div class="form-group  col-md-4">
+                <label for="inputFecha">Fecha</label>
+                <input type="number" class="form-control" id="inputFecha" placeholder="Ingresa la fecha"
+                formControlName="date" required>
+            </div>
+        </div>-->
+        <button type="submit" class="btn btn-primary"  [disabled]="!transactionCreateForm.valid">Crear</button>
     </form>
 </div>

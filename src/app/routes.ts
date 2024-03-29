@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-
+import { authGuard } from './models/auth-guard';
 import { AccountsComponent } from './modules/accounts/accounts.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { ProfileComponent } from './modules/profile/profile.component';
@@ -16,16 +16,19 @@ export const routeConfig: Routes = [
   },
   {
     path: 'accounts',
+    canActivate: [authGuard],
     component: AccountsComponent,
     title: 'Accounts'
   },
   {
     path: 'profile',
+    canActivate: [authGuard],
     component: ProfileComponent,
     title: 'Profile'
   },
   {
     path: 'transactions',
+    canActivate: [authGuard],
     component: TransactionsComponent,
     title: 'Transactions'
   },
@@ -41,6 +44,7 @@ export const routeConfig: Routes = [
   },
   {
     path: 'transactionCreate',
+    canActivate: [authGuard],
     component: TransactionsCreateComponent,
     title: 'SignUp'
   },
