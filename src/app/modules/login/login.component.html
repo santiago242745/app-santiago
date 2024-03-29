@@ -1,23 +1,24 @@
- <br>
- <br>
- 
+<br>
+<br>
+
 <div class="container">
     <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
             <H1>INGRESAR</H1>
             <br>
-            <form>
+            <form [formGroup]="loginForm" (submit)="onSubmit()">
                 <div class="form-group">
                     <label for="inputEmail">Correo</label>
                     <input type="email" class="form-control" id="inputEmail" aria-describedby="email"
-                        placeholder="Ingrese el correo" required>
+                        placeholder="Ingrese el correo" formControlName="email" required>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Contraseña</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Ingrese la contraseña" required>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Ingrese la contraseña"
+                        formControlName="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Ingresar</button>
             </form>
             <br>
             <h5>¿No estas registrado?</h5>

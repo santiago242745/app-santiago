@@ -1,1 +1,43 @@
-<p>transactions-create works!</p>
+<div class="formCreate">
+    <br>
+    <br>
+    <H1>CREACION TRANSACCIÓN</H1>
+    <br>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="formControlSelect1">Tipo</label>
+                <select class="form-control" id="formControlSelect1">
+                    <option>Deposit</option>
+                    <option>Withdrawal</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputOrigen">Origen</label>
+                <input type="text" class="form-control" id="inputOrigen" placeholder="Ingresa la cuenta origen"
+                    required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputDestino">Destino</label>
+                <input type="text" class="form-control" id="inputDestino" placeholder="Ingresa la cuenta destino"
+                    required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group  col-md-4">
+                <label for="inputValor">Valor</label>
+                <input type="text" class="form-control" id="inputValor" placeholder="Ingresa el valor" required>
+            </div>
+            <div class="form-group  col-md-4">
+                <label for="inputCategoria">Categoria</label>
+                <input type="text" class="form-control" id="inputCategoria" placeholder="Ingresa la categoria" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputDescripcion">Descripción</label>
+                <input type="text" class="form-control" id="inputDescripcion" placeholder="Ingresa la descripción"
+                    required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>

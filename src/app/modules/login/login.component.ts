@@ -32,7 +32,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.authService.signin(this.loginForm.getRawValue()).subscribe((token) => {
+      this.authService.signin(this.loginForm.value).subscribe((token) => {
         localStorage.setItem('access-token', token);
         this.router.navigate(['/']);
       })

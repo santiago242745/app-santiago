@@ -32,14 +32,15 @@ export class SignUpComponent {
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    this.authService.signup(this.signupForm.getRawValue()).subscribe((token) => {
+    this.authService.signup(this.signupForm.value).subscribe((token) => {
       localStorage.setItem('access-token', token);
       this.router.navigate(['/']);
     })

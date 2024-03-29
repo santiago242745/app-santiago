@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 
 import { AccountsComponent } from './modules/accounts/accounts.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { HomeComponent } from './modules/home/home.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { SignUpComponent } from './modules/sign-up/sign-up.component';
 import { TransactionsComponent } from './modules/transactions/transactions.component';
 import { LoginComponent } from './modules/login/login.component';
+import { TransactionsCreateComponent } from './modules/transactions-create/transactions-create.component';
 
 export const routeConfig: Routes = [
   {
@@ -37,6 +37,11 @@ export const routeConfig: Routes = [
   {
     path: 'signup',
     component: SignUpComponent,
+    title: 'SignUp'
+  },
+  {
+    path: 'transactionCreate',
+    component: TransactionsCreateComponent,
     title: 'SignUp'
   },
 ];
