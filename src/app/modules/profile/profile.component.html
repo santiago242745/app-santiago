@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;" *ngIf="user$ | async as user">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Información del perfil</h5>
+      <p class="card-text">Datos basicos del usuario</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ user.firsName }}</li>
+      <li class="list-group-item">{{ user.lastName }}</li>
+      <li class="list-group-item">{{ user.email }}</li>
+    </ul>
+  </div>

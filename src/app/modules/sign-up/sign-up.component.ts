@@ -41,7 +41,10 @@ export class SignUpComponent {
 
   onSubmit() {
     this.authService.signup(this.signupForm.value).subscribe((token) => {
-      localStorage.setItem('access-token', token);
+      const token2 = JSON.stringify(token).split(":")[1];
+      const token3 = token2.replace("}", '')
+      const token4 = token3.replaceAll("\"", "")
+      localStorage.setItem('access-token', token4);
       this.router.navigate(['/']);
     })
   }
