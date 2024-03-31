@@ -8,7 +8,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const token = localStorage.getItem('access-token') ?? '';
-
+    console.log(token);
     console.log('intercepting');
 
     if (token) {
@@ -17,6 +17,8 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`
         }
       });
+    } else {
+      alert('Error profile')
     }
 
     return next.handle(req);
